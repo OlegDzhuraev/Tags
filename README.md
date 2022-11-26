@@ -39,7 +39,51 @@ public class ExampleTagsInit : MonoBehaviour
 }
 ```
 Setup is done, now you can use Tags.
+
 You can check the Example files to get more info.
+
+## Usage
+Add tag:
+```cs
+gameObject.AddTag(Tag.Example);
+```
+
+Remove tag:
+```cs
+gameObject.RemoveTag(Tag.Example);
+```
+
+Check object has tag:
+```cs
+if (gameObject.HasTag(Tag.Example))
+{
+  // do something
+}
+```
+
+Check object has multiple tags in the same time (like AND condition):
+```cs
+if (gameObject.HasAllTags(Tag.Example, Tag.Another)) // you can check any amount of tags
+{
+  // do something
+}
+```
+
+Check object has any of tags (like OR condition):
+```cs
+if (gameObject.HasAnyTags(Tag.Example, Tag.Another)) // you can check any amount of tags
+{
+  // do something
+}
+```
+
+Count amount of tag. Returns 0 if there no tag, 1 if there one tag, and bigger value if it "stacked":
+```cs
+gameObject.AddTag(Tag.Example);
+int count = gameObject.CountTags(Tag.Example); // result is 1
+gameObject.AddTag(Tag.Example);
+count = gameObject.CountTags(Tag.Example); // result is 2
+```
 
 ## License 
 MIT
