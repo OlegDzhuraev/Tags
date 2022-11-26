@@ -114,7 +114,7 @@ Usage example:
 GlobalTags.Instance.Add(Tag.Example);
 ```
 
-It can be called from any script by `GlobalTags.Instance`.
+It can be accessed from any script by `GlobalTags.Instance`.
 
 ## License 
 MIT
