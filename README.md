@@ -6,6 +6,7 @@ Multi-tags gamedev extension for Unity and C#. Experimental repo.
 - Uses enum instead of strings.
 - Can be used to code gameplay behaviour.
 - Tags can be stacked.
+- When used in gameplay code, reduces its coupling, since classes now can don't know about each other, if their code referenced on tags instead another class. But the desicion is yours: is it good or bad. :)
 
 ## How to install
 You can install Tags via Unity Package Manager as a git package from Github repository:
