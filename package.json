@@ -1,0 +1,18 @@
+{
+    "name": "com.insaneone.tags",
+    "author": "InsaneOne",
+    "displayName": "Tags",
+    "description": "Game development tags extension for Unity and C#. MIT License.",
+    "unity": "2019.1",
+    "version": "0.0.1",
+    "keywords": [
+        "unity",
+        "tags",
+        "insaneone"
+    ],
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/OlegDzhuraev/Tags.git"
+    }
+}

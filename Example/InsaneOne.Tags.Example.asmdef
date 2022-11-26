@@ -1,0 +1,16 @@
+{
+    "name": "InsaneOne.Tags.Example",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1946208a60170d64ca33533c9bea7635"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,18 @@
+{
+    "name": "InsaneOne.Tags.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1946208a60170d64ca33533c9bea7635"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
