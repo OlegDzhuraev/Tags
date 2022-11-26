@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tags.Example
 {
-	public class ExampleStartTagsAdd : MonoBehaviour
+	public class ExampleMain : MonoBehaviour
 	{
 		private void Start()
 		{
@@ -12,7 +12,27 @@ namespace Tags.Example
 			tags.WasAdded += OnTagWasAdded;
 			tags.WasRemoved += OnTagWasRemoved;
 			
+			GlobalTags.Instance.WasAdded += OnGlobalTagWasAdded;
+			
 			StartCoroutine(ExampleAction());
+		}
+
+		private void OnTagWasAdded(IntTag intTag)
+		{
+			var realTag = intTag.ToEnum<ExampleTag>();
+			Debug.Log($"Tag {realTag} was added");
+		}
+		
+		private void OnTagWasRemoved(IntTag intTag)
+		{
+			var realTag = intTag.ToEnum<ExampleTag>();
+			Debug.Log($"Tag {realTag} was removed");
+		}
+		
+		private void OnGlobalTagWasAdded(IntTag intTag)
+		{
+			var realTag = intTag.ToEnum<ExampleTag>();
+			Debug.Log($"GLOBAL Tag {realTag} was added");
 		}
 
 		IEnumerator ExampleAction()
@@ -50,20 +70,17 @@ namespace Tags.Example
 			
 			var isTwoTags = gameObject.HasAllTags(ExampleTag.IsPoisoned, ExampleTag.AlternativeAttackEnabled);
 			Debug.Log($"Is GameObject have {ExampleTag.IsPoisoned} and {ExampleTag.AlternativeAttackEnabled}: {isTwoTags}");
+
+			yield return new WaitForSeconds(1f);
+			
+			LogHeading("Using global tags example:");
+			GlobalTags.Instance.Add(ExampleTag.AlternativeAttackEnabled);
+			
+			Debug.Log($"Checking that global tag {ExampleTag.AlternativeAttackEnabled} was really added...");
+			if (GlobalTags.Instance.Has(ExampleTag.AlternativeAttackEnabled))
+				Debug.Log($"Object has tag {ExampleTag.AlternativeAttackEnabled}!");
 		}
 
 		void LogHeading(string text) => Debug.Log($"<color=yellow><b>{text}</b></color>");
-
-		private void OnTagWasAdded(IntTag intTag)
-		{
-			var realTag = intTag.ToEnum<ExampleTag>();
-			Debug.Log($"Tag {realTag} was added");
-		}
-		
-		private void OnTagWasRemoved(IntTag intTag)
-		{
-			var realTag = intTag.ToEnum<ExampleTag>();
-			Debug.Log($"Tag {realTag} was removed");
-		}
 	}
 }

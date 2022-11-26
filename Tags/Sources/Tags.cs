@@ -86,6 +86,9 @@ namespace InsaneOne.Tags
             return false;
         }
 
+        /// <summary>Removes all tags without raising events.</summary>
+        public void Reset() => addedTags.Clear();
+
         /// <summary> Only for debugging purposes. </summary>
         public Dictionary<IntTag, int> GetTagsInternal() => addedTags;
     }
