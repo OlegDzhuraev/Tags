@@ -95,7 +95,7 @@ count = gameObject.CountTags(Tag.Example); // result is 2
 
 Prevent adding more than one tag:
 ```cs
-gameObject.AddOnce(Tag.Example); // it will not add a new tag if there already added at least one
+gameObject.AddTagOnce(Tag.Example); // it will not add a new tag if there already added at least one
 ```
 
 ## License 
