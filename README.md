@@ -8,7 +8,11 @@ Multi-tags gamedev extension for Unity and C#. Experimental repo.
 - Tags can be stacked.
 
 ## How to install
-Use Unity Package Manager (git import) or copy repo to the project Assets folder.
+You can install Tags via Unity Package Manager as a git package from Github repository:
+```
+https://github.com/OlegDzhuraev/Tags.git
+```
+You also can download it directly from Github and place into the Assets folder.
 
 ## Quickstart
 
