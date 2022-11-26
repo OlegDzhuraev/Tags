@@ -12,7 +12,7 @@ namespace InsaneOne.Tags
         public void Add(params IntTag[] tags)
         {
             foreach (var tag in tags)
-                if (HasAny(tag))
+                if (Has(tag))
                     addedTags[tag]++;
                 else
                     FirstAddTag(tag);
@@ -21,7 +21,7 @@ namespace InsaneOne.Tags
         public void AddOnce(params IntTag[] tags)
         {
             foreach (var tag in tags)
-                if (!HasAny(tag))
+                if (!Has(tag))
                     FirstAddTag(tag);
         }
 
@@ -35,7 +35,7 @@ namespace InsaneOne.Tags
         {
             foreach (var tag in tags)
             {
-                if (!HasAny(tag))
+                if (!Has(tag))
                     return;
 
                 addedTags[tag]--;
@@ -73,6 +73,17 @@ namespace InsaneOne.Tags
                     return false;
 
             return true;
+        }
+
+        public bool ConsumeTag(IntTag tag)
+        {
+            if (Has(tag))
+            {
+                Remove(tag);
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary> Only for debugging purposes. </summary>

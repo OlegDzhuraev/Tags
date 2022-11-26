@@ -4,6 +4,8 @@ namespace InsaneOne.Tags
 {
 	public static class TagsExtension
 	{
+		// todo optimize go.GetTags() - cache or something
+		
 		public static bool HasMonoTags(this GameObject go) => go.TryGetComponent(out MonoTags _);
 
 		public static Tags GetTags(this GameObject go)
@@ -22,5 +24,7 @@ namespace InsaneOne.Tags
 		public static bool HasTag(this GameObject go, IntTag tag) => go.GetTags().Has(tag);
 		public static bool HasAnyTags(this GameObject go, params IntTag[] tags) => go.GetTags().HasAny(tags);
 		public static bool HasAllTags(this GameObject go, params IntTag[] tags) => go.GetTags().HasAll(tags);
+
+		public static bool ConsumeTag(this GameObject go, IntTag tag) => go.GetTags().ConsumeTag(tag);
 	}
 }
