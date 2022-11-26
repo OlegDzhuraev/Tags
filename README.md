@@ -107,5 +107,14 @@ Prevent adding more than one tag:
 gameObject.AddTagOnce(Tag.Example); // it will not add a new tag if there already added at least one
 ```
 
+### Global tags
+This is an special object which uses Singleton pattern. Used for shared tags, for example which specific for your whole game world/state. 
+Usage example:
+```cs
+GlobalTags.Instance.Add(Tag.Example);
+```
+
+It can be called from any script by `GlobalTags.Instance`.
+
 ## License 
 MIT
