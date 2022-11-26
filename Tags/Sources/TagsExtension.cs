@@ -19,8 +19,8 @@ namespace InsaneOne.Tags
 		public static void RemoveTag(this GameObject go, params IntTag[] tags) => go.GetTags().Remove(tags);
 		
 		public static int CountTags(this GameObject go, IntTag tag) => go.GetTags().Count(tag);
-		public static bool HaveTag(this GameObject go, IntTag tag) => go.GetTags().Have(tag);
-		public static bool HaveAnyTags(this GameObject go, params IntTag[] tags) => go.GetTags().HaveAny(tags);
-		public static bool HaveAllTags(this GameObject go, params IntTag[] tags) => go.GetTags().HaveAll(tags);
+		public static bool HasTag(this GameObject go, IntTag tag) => go.GetTags().Has(tag);
+		public static bool HasAnyTags(this GameObject go, params IntTag[] tags) => go.GetTags().HasAny(tags);
+		public static bool HasAllTags(this GameObject go, params IntTag[] tags) => go.GetTags().HasAll(tags);
 	}
 }

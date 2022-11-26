@@ -12,7 +12,7 @@ namespace InsaneOne.Tags
         public void Add(params IntTag[] tags)
         {
             foreach (var tag in tags)
-                if (HaveAny(tag))
+                if (HasAny(tag))
                     addedTags[tag]++;
                 else
                     FirstAddTag(tag);
@@ -21,7 +21,7 @@ namespace InsaneOne.Tags
         public void AddOnce(params IntTag[] tags)
         {
             foreach (var tag in tags)
-                if (!HaveAny(tag))
+                if (!HasAny(tag))
                     FirstAddTag(tag);
         }
 
@@ -35,7 +35,7 @@ namespace InsaneOne.Tags
         {
             foreach (var tag in tags)
             {
-                if (!HaveAny(tag))
+                if (!HasAny(tag))
                     return;
 
                 addedTags[tag]--;
@@ -48,7 +48,7 @@ namespace InsaneOne.Tags
             }
         }
 
-        public bool Have(IntTag tag) => addedTags.ContainsKey(tag);
+        public bool Has(IntTag tag) => addedTags.ContainsKey(tag);
         
         public int Count(IntTag tag)
         {
@@ -57,19 +57,19 @@ namespace InsaneOne.Tags
             return count;
         }
 
-        public bool HaveAny(params IntTag[] tags)
+        public bool HasAny(params IntTag[] tags)
         {
             for (var i = 0; i < tags.Length; i++)
-                if (Have(tags[i]))
+                if (Has(tags[i]))
                     return true;
 
             return false;
         }
 
-        public bool HaveAll(params IntTag[] tags)
+        public bool HasAll(params IntTag[] tags)
         {
             for (var i = 0; i < tags.Length; i++)
-                if (!Have(tags[i]))
+                if (!Has(tags[i]))
                     return false;
 
             return true;

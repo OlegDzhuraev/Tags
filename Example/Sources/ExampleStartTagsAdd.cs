@@ -27,7 +27,7 @@ namespace Tags.Example
 
 			Debug.Log($"Checking that tag {ExampleTag.IsPoisoned} was really added...");
 
-			if (gameObject.HaveTag(ExampleTag.IsPoisoned))
+			if (gameObject.HasTag(ExampleTag.IsPoisoned))
 				Debug.Log($"Object has tag {ExampleTag.IsPoisoned}!");
 
 			yield return new WaitForSeconds(1f);
@@ -48,7 +48,7 @@ namespace Tags.Example
 			LogHeading("Checking that 2 tags added in the same time:");
 			gameObject.AddTag(ExampleTag.AlternativeAttackEnabled);
 			
-			var isTwoTags = gameObject.HaveAllTags(ExampleTag.IsPoisoned, ExampleTag.AlternativeAttackEnabled);
+			var isTwoTags = gameObject.HasAllTags(ExampleTag.IsPoisoned, ExampleTag.AlternativeAttackEnabled);
 			Debug.Log($"Is GameObject have {ExampleTag.IsPoisoned} and {ExampleTag.AlternativeAttackEnabled}: {isTwoTags}");
 		}
 
