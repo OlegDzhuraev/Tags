@@ -3,8 +3,8 @@
     "author": "InsaneOne",
     "displayName": "Tags",
     "description": "Game development tags extension for Unity and C#. MIT License.",
-    "unity": "2019.1",
-    "version": "0.0.1",
+    "unity": "2020.1",
+    "version": "0.0.2",
     "keywords": [
         "unity",
         "tags",
