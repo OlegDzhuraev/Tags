@@ -78,6 +78,14 @@ if (gameObject.HasAnyTags(Tag.Example, Tag.Another)) // you can check any amount
 }
 ```
 
+Consume tag - this code checks if there specific tag and if it exists - returns true and removes this tag from the object (if it stacked, removes only one):
+```cs
+if (gameObject.ConsumeTag(Tag.Example)) 
+{
+  // do something
+}
+```
+
 ### Stacking tags
 Stacking tags can be useful when several objects affects specific one. 
 For example, you have modal windows system in your game and you need to lock player controls if there some modal opened. You can open any amount of modal windows in the same time. 
